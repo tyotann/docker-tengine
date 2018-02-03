@@ -57,6 +57,7 @@ RUN apt-get update && \
         --user=www-data \
         --group=www-data \
         --prefix=/usr/share/nginx \
+        --conf-path=/etc/nginx/nginx.conf \
         --lock-path=/var/lock/nginx.lock \
         --pid-path=/run/nginx.pid \
         --http-client-body-temp-path=/var/lib/nginx/body \
@@ -106,6 +107,7 @@ RUN apt-get update && \
     make install && \
     mkdir -p /etc/nginx/sites-available && \
     mkdir -p /etc/nginx/sites-enabled && \
+    mkdir /etc/nginx/conf.d && \
     chown -R www-data:www-data /etc/nginx/sites-available && \
     chown -R www-data:www-data /etc/nginx/sites-enabled
 
