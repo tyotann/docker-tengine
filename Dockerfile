@@ -107,7 +107,9 @@ RUN apt-get update && \
     make install && \
     mkdir -p /etc/nginx/sites-available && \
     mkdir -p /etc/nginx/sites-enabled && \
+    mkdir -p /var/lib/nginx/body && \
     mkdir /etc/nginx/conf.d && \
+    chown -R www-data:www-data /var/lib/nginx/body && \
     chown -R www-data:www-data /etc/nginx/sites-available && \
     chown -R www-data:www-data /etc/nginx/sites-enabled
 
